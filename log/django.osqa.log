@@ -1,0 +1,64 @@
+/home/nopox/Projects/OSQA/forum/modules/__init__.py TIME: 2012-07-26 01:30:37,521 MSG: __init__.py:get_modules_script:27 Error importing urls from module <module 'forum_modules.sximporter' from '/home/nopox/Projects/OSQA/forum_modules/sximporter/__init__.pyc'>: 
+ Traceback (most recent call last):
+  File "/home/nopox/Projects/OSQA/forum/modules/__init__.py", line 18, in get_modules_script
+    all.append(__import__('%s.%s' % (m.__name__, script_name), globals(), locals(), [m.__name__]))
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/urls.py", line 5, in <module>
+    from views import sximporter
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/views.py", line 5, in <module>
+    import importer
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/importer.py", line 49, in <module>
+    orm = create_orm()
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/importer.py", line 30, in create_orm
+    migrations_folder = os.path.join(settings.SITE_SRC_ROOT, 'forum/migrations')
+  File "/home/nopox/Projects/OSQA/.env/lib/python2.6/site-packages/django/utils/functional.py", line 185, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'Settings' object has no attribute 'SITE_SRC_ROOT'
+
+/home/nopox/Projects/OSQA/forum/modules/__init__.py TIME: 2012-07-26 01:37:54,080 MSG: __init__.py:get_modules_script:27 Error importing urls from module <module 'forum_modules.sximporter' from '/home/nopox/Projects/OSQA/forum_modules/sximporter/__init__.pyc'>: 
+ Traceback (most recent call last):
+  File "/home/nopox/Projects/OSQA/forum/modules/__init__.py", line 18, in get_modules_script
+    all.append(__import__('%s.%s' % (m.__name__, script_name), globals(), locals(), [m.__name__]))
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/urls.py", line 5, in <module>
+    from views import sximporter
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/views.py", line 5, in <module>
+    import importer
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/importer.py", line 49, in <module>
+    orm = create_orm()
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/importer.py", line 30, in create_orm
+    migrations_folder = os.path.join(settings.SITE_SRC_ROOT, 'forum/migrations')
+  File "/home/nopox/Projects/OSQA/.env/lib/python2.6/site-packages/django/utils/functional.py", line 185, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'Settings' object has no attribute 'SITE_SRC_ROOT'
+
+/home/nopox/Projects/OSQA/forum/modules/__init__.py TIME: 2012-07-26 02:21:22,296 MSG: __init__.py:get_modules_script:27 Error importing urls from module <module 'forum_modules.sximporter' from '/home/nopox/Projects/OSQA/forum_modules/sximporter/__init__.pyc'>: 
+ Traceback (most recent call last):
+  File "/home/nopox/Projects/OSQA/forum/modules/__init__.py", line 18, in get_modules_script
+    all.append(__import__('%s.%s' % (m.__name__, script_name), globals(), locals(), [m.__name__]))
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/urls.py", line 5, in <module>
+    from views import sximporter
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/views.py", line 5, in <module>
+    import importer
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/importer.py", line 49, in <module>
+    orm = create_orm()
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/importer.py", line 30, in create_orm
+    migrations_folder = os.path.join(settings.SITE_SRC_ROOT, 'forum/migrations')
+  File "/home/nopox/Projects/OSQA/.env/lib/python2.6/site-packages/django/utils/functional.py", line 185, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'Settings' object has no attribute 'SITE_SRC_ROOT'
+
+/home/nopox/Projects/OSQA/forum/modules/__init__.py TIME: 2012-07-26 02:23:06,416 MSG: __init__.py:get_modules_script:27 Error importing urls from module <module 'forum_modules.sximporter' from '/home/nopox/Projects/OSQA/forum_modules/sximporter/__init__.pyc'>: 
+ Traceback (most recent call last):
+  File "/home/nopox/Projects/OSQA/forum/modules/__init__.py", line 18, in get_modules_script
+    all.append(__import__('%s.%s' % (m.__name__, script_name), globals(), locals(), [m.__name__]))
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/urls.py", line 5, in <module>
+    from views import sximporter
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/views.py", line 5, in <module>
+    import importer
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/importer.py", line 49, in <module>
+    orm = create_orm()
+  File "/home/nopox/Projects/OSQA/forum_modules/sximporter/importer.py", line 30, in create_orm
+    migrations_folder = os.path.join(settings.SITE_SRC_ROOT, 'forum/migrations')
+  File "/home/nopox/Projects/OSQA/.env/lib/python2.6/site-packages/django/utils/functional.py", line 185, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'Settings' object has no attribute 'SITE_SRC_ROOT'
+

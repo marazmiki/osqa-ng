@@ -1,0 +1,77 @@
+# encoding:utf-8
+
+from osqa.settings import rel
+import os
+import logging
+
+
+LOG_FILENAME = 'django.osqa.log'
+
+
+#for logging
+logging.basicConfig(
+    filename=rel('log', LOG_FILENAME),
+    level=logging.ERROR,
+    format='%(pathname)s TIME: %(asctime)s MSG: %(filename)s:%(funcName)s:%(lineno)d %(message)s',
+)
+
+#ADMINS and MANAGERS
+ADMINS = ()
+MANAGERS = ADMINS
+
+DEBUG = True
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': True
+}
+
+
+TEMPLATE_DEBUG = DEBUG
+INTERNAL_IPS = ('127.0.0.1',)
+
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # ".mysql",  ".postgresql_psycopg2"
+        'NAME': rel('db.sqlite'),               #  "osqa"
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+    }
+}
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache', # 'django.core.cache.backends.filebased.FileBasedCache'
+        'LOCATION': rel('cache'),
+    }
+}
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+# This should be equal to your domain name, plus the web application context.
+# This shouldn't be followed by a trailing slash.
+# I.e., http://www.yoursite.com or http://www.hostedsite.com/yourhostapp
+APP_URL = 'http://localhost:9500/'
+
+#LOCALIZATIONS
+TIME_ZONE = 'Asia/Novosibirsk'
+
+#OTHER SETTINGS
+
+##
+## Localization and internationalization
+##
+USE_I18N = True
+USE_TZ = True
+LANGUAGE_CODE = 'en'
+
+
+
+DJANGO_VERSION = 1.4
+OSQA_DEFAULT_SKIN = 'default'
+
+
+DISABLED_MODULES = ['books', 'recaptcha', 'project_badges']
+MESSAGE_STORAGE='django.contrib.messages.storage.session.SessionStorage'
