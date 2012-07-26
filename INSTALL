@@ -1,5 +1,34 @@
-For installation instruction go to:
+Installation
+------------
 
-http://wiki.osqa.net/display/docs/Home
+1. Checkout the sources:
 
-The wiki contains many recipes to help you install on different hosting providers.
+   $ git clone https://github.com/marazmiki/osqa-ng.git QA
+   $ cd QA
+
+2. Install virtualenv
+
+    $ virtualenv .env
+
+3. Activate it
+
+    $ source .env/bin/activate
+
+4. Install requirements
+
+    $ pip install -r requirements.txt
+    $ pip install -e git+http://github.com/AliLozano/django-messages-extends.git#egg=django-messages-extends
+
+5. Synchronize the database:
+
+    $ ./manage.py syncdb
+    $ ./manage.py migrate
+
+6. Create a setttings_local.py from template:
+
+    $ cp settings_local.py.dist settings_local.py
+
+7. Open settings_local.py in text editor and changes at least these attributes:
+
+   * DATABASES
+   * APP_URL
