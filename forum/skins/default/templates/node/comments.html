@@ -1,3 +1,4 @@
+{% load url from future %}
 {% load extra_tags %}
 {% load i18n %}
 
@@ -11,22 +12,22 @@
             <div class="comment-text">{{ comment.comment }}</div>
             <div class="comment-info" id="comment-{{comment.id}}-info">
                 {% if comment.can_like %}
-                    <a id="post-{{ comment.id }}-upvote" href="{% url like_comment id=comment.id %}"
+                    <a id="post-{{ comment.id }}-upvote" href="{% url 'like_comment' id=comment.id %}"
                      title="{% trans "I like this comment (click again to cancel)" %}" class="ajax-command comment-like{% if comment.likes %} on{% endif %}"
                     rel="nofollow"> </a>
                 {% endif %}
                 {% if comment.can_edit %}
-                    <a id="comment-{{ comment.id }}-edit" href="{% url node_markdown id=comment.id %}" title="{% trans "Edit comment" %}"
+                    <a id="comment-{{ comment.id }}-edit" href="{% url 'node_markdown' id=comment.id %}" title="{% trans "Edit comment" %}"
                         class="comment-edit" rel="nofollow"> </a>
                 {% endif %}
                 {% if comment.can_delete %}
-                    <a id="comment-{{ comment.id }}-delete" href="{% url delete_comment id=comment.id %}" title="{% trans "Delete comment" %}"
+                    <a id="comment-{{ comment.id }}-delete" href="{% url 'delete_comment' id=comment.id %}" title="{% trans "Delete comment" %}"
                         class="ajax-command comment-delete confirm" rel="nofollow"> </a>
                 {% endif %}
                 {% if comment.can_convert %}
-                    <a rel="nofollow" id="comment-{{ comment.id }}-convert" href="{% url convert_comment id=comment.id %}" title="{% trans "Convert comment to answer" %}"
+                    <a rel="nofollow" id="comment-{{ comment.id }}-convert" href="{% url 'convert_comment' id=comment.id %}" title="{% trans "Convert comment to answer" %}"
                         class="ajax-command comment-convert confirm" rel="nofollow"> </a>
-                    <a rel="nofollow" id="comment-{{ comment.id }}-convert-to-question" href="{% url convert_to_question id=comment.id %}?node_type=comment" title="{% trans "Convert comment to question" %}"
+                    <a rel="nofollow" id="comment-{{ comment.id }}-convert-to-question" href="{% url 'convert_to_question' id=comment.id %}?node_type=comment" title="{% trans "Convert comment to question" %}"
                         class="comment-convert-to-question" rel="nofollow"> </a>
                 {% endif %}
 

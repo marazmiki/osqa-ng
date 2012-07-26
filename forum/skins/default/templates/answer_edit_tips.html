@@ -1,3 +1,4 @@
+{% load url from future %}
 <!-- template answer_edit_tips.html -->
 {% load i18n general_sidebar_tags %}
 <div class="boxC">
@@ -17,7 +18,7 @@
             </li>
         </ul>
         <p class='info-box-follow-up-links'>
-            <a href="{% url faq %}" target="_blank" title="{% trans "see frequently asked questions" %}">faq &raquo;</a>
+            <a href="{% url 'faq' %}" target="_blank" title="{% trans "see frequently asked questions" %}">faq &raquo;</a>
         </p>
     </div>
 </div>

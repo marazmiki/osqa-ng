@@ -1,3 +1,4 @@
+{% load url from future %}
     <div class="qstA">
         <h2>
             <a href="{{ question.get_absolute_url }}">{{ question.headline }}</a>
@@ -49,7 +50,7 @@
         
         <div class="tags">
         {% for tag in question.tagname_list %}
-        <a class="tag-link-{{ tag }}" href="{% url tag_questions tag|urlencode %}" title="{% trans "see questions tagged" %}'{{ tag }}'{% trans "using tags" %}" rel="tag">{{ tag }}</a>
+        <a class="tag-link-{{ tag }}" href="{% url 'tag_questions' tag|urlencode %}" title="{% trans "see questions tagged" %}'{{ tag }}'{% trans "using tags" %}" rel="tag">{{ tag }}</a>
         {% endfor %}
         </div>
     </div>

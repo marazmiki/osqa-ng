@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+
+{% load url from future %}
+
 <!-- template answer_edit.html -->
 {% load i18n %}
 {% load extra_tags %}
@@ -64,7 +67,7 @@
 </div>
 <div id="main-body" class="ask-body">
     <div id="askform">
-        <form id="fmedit" action="{% url edit_answer answer.id %}" method="post">
+        <form id="fmedit" action="{% url 'edit_answer' answer.id %}" method="post">
             {% csrf_token %}
             <label for="id_revision" ><strong>{% trans "revision" %}:</strong></label> <br/> 
             {% if revision_form.revision.errors %}{{ revision_form.revision.errors.as_ul }}{% endif %}

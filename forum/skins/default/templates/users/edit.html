@@ -1,4 +1,7 @@
 {% extends "base_content.html" %}
+
+{% load url from future %}
+
 <!-- user_edit.html -->
 {% load extra_tags %}
 {% load humanize %}
@@ -33,7 +36,7 @@
     {{ user.username }} - {% trans "edit profile" %}
 </div>
 <div id="main-body" style="width:100%;padding-top:10px">
-    <form name="" action="{% url edit_user user.id user.username|slugify %}" method="post">
+    <form name="" action="{% url 'edit_user' user.id user.username|slugify %}" method="post">
         {% csrf_token %}
         <div id="left" style="float:left;width:180px">
             {% if user.email %}

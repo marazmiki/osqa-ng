@@ -1,4 +1,7 @@
 {% extends "base_content.html" %}
+
+{% load url from future %}
+
 <!-- template about.html -->
 {% load i18n %}
 {% load extra_tags %}
@@ -11,7 +14,7 @@
 {% trans "Give us your feedback!" %}
 </div>
 <div class="content">
-    <form method="post" action="{% url feedback %}" accept-charset="utf-8">
+    <form method="post" action="{% url 'feedback' %}" accept-charset="utf-8">
         {% csrf_token %}
         {% if user.is_authenticated %}
             <p class="message">

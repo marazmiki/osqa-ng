@@ -1,3 +1,4 @@
+{% load url from future %}
 {% load i18n %}
 
 <div class="boxC">
@@ -6,12 +7,12 @@
          <ul class="badge-list">
          {% for award in awards %}
             <li>
-            <a href="{% url badges %}{{award.badge.id}}/{{award.badge.name|slugify}}" title="{{ award.badge.description }}" class="medal">
+            <a href="{% url 'badges' %}{{award.badge.id}}/{{award.badge.name|slugify}}" title="{{ award.badge.description }}" class="medal">
             <span class="badge{{ award.badge.type }}">&#9679;</span>&nbsp;{{ award.badge.name }}</a>
             <a href="{{ award.user.get_profile_url }}">{{ award.user.decorated_name }}</a>
             </li>
         {% endfor %}
         </ul>
-        <div class="more"><a href="{% url badges %}">{% trans "all awards" %} </a> </div>
+        <div class="more"><a href="{% url 'badges' %}">{% trans "all awards" %} </a> </div>
      </div>
 </div>

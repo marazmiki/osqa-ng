@@ -1,4 +1,7 @@
 {% extends "base_content.html" %}
+
+{% load url from future %}
+
 <!-- template logout.html -->
 {% load extra_tags %}
 {% load humanize %}
@@ -7,7 +10,7 @@
 {% block forejs %}
     <script type="text/javascript">
     $().ready(function(){
-        $('#btLogout').bind('click', function(){ window.location.href='{% url user_signout %}?next={{ next }}'; });
+        $('#btLogout').bind('click', function(){ window.location.href='{% url 'user_signout' %}?next={{ next }}'; });
     });
     </script>
 {% endblock %}

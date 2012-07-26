@@ -1,3 +1,4 @@
+{% load url from future %}
 {% load i18n humanize extra_filters extra_tags user_tags %}
 <div class="short-summary">
     <div class="counts">{% if favorite_count %}
@@ -33,7 +34,7 @@
         </div>
 
         <div class="tags">{% for tag in question.tagname_list %}
-            <a class="tag-link-{{ tag }}" href="{% url tag_questions tag|urlencode %}" title="{% trans "see questions tagged" %} '{{ tag }}'" rel="tag">{{ tag }}</a>{% endfor %}
+            <a class="tag-link-{{ tag }}" href="{% url 'tag_questions' tag|urlencode %}" title="{% trans "see questions tagged" %} '{{ tag }}'" rel="tag">{{ tag }}</a>{% endfor %}
         </div>
     </div>
 

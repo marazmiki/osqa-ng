@@ -1,3 +1,4 @@
+{% load url from future %}
 {% spaceless %}
 {% load i18n extra_tags %}
 <h3 class="subtitle">{% trans "Follow this question" %}</h3>
@@ -14,7 +15,7 @@
             <p>{% trans "You are not subscribed to this question." %}</p>
         {% endif %}
     </div>
-    <p><a class="ajax-command sidebar_button subscription_switch" href="{% url subscribe_simple id=question.id %}">
+    <p><a class="ajax-command sidebar_button subscription_switch" href="{% url 'subscribe_simple' id=question.id %}">
         {% if subscription %}
             {% trans "unsubscribe me" %}
         {% else %}

@@ -1,4 +1,7 @@
 {% extends "user.html" %}
+
+{% load url from future %}
+
 <!-- user_stats.html -->
 {% load i18n %}
 {% load extra_tags %}
@@ -110,7 +113,7 @@
                         <a rel="tag" 
                             class="tag-link-{{ tag.name }}"
 							title="{% blocktrans with tag.name as tag_name %}see other questions with {{view_user}}'s contributions tagged '{{ tag_name }}' {% endblocktrans %}"
-							href="{% url tag_questions tag|urlencode %}?user={{view_user.username}}">{{tag.name}}</a>
+							href="{% url 'tag_questions' tag|urlencode %}?user={{view_user.username}}">{{tag.name}}</a>
                         <span class="tag-number">&#215; {{ tag.user_tag_usage_count|intcomma }}</span><br/>
                             {% if forloop.counter|divisibleby:"10" %}
                                 </td>
@@ -137,7 +140,7 @@
                     <td style="line-height:35px; padding-right: 20px;">
                         {% for award, count in awards %}
                             {% spaceless %}
-                            <a href="{% url badges %}{{award.id}}/{{award.name|slugify}}" title="{{ award.description }}" class="medal">
+                            <a href="{% url 'badges' %}{{award.id}}/{{award.name|slugify}}" title="{{ award.description }}" class="medal">
                                 <span class="badge{{ award.type }}">&#9679;</span>&nbsp;{{ award.name }}
                             </a>
                             {% ifnotequal count 1 %}

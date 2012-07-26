@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+
+{% load url from future %}
+
 <!-- question_edit.html -->
 {% load i18n %}
 {% load extra_tags %}
@@ -27,7 +30,7 @@
             });
             
             //Tags autocomplete action
-        	$("#id_tags").autocomplete("{% url matching_tags %}", {
+        	$("#id_tags").autocomplete("{% url 'matching_tags' %}", {
         		matchContains: true,
                 max: 20,
                 multiple: true,
