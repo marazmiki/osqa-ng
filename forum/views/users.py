@@ -434,7 +434,7 @@ def _user_subscriptions(request, user, **kwargs):
                 user.subscription_settings.enable_notifications = enabled
                 user.subscription_settings.save()
 
-                request.user.message_set.create(message=message)
+                request.user.message_set.create(message=message, level=messages_extends.SUCCESS_PERSISTENT)
         else:
             form = SubscriptionSettingsForm(instance=user.subscription_settings)
 
@@ -452,7 +452,7 @@ def user_preferences(request, user, **kwargs):
 
         if form.is_valid():
             user.prop.preferences = form.cleaned_data
-            request.user.message_set.create(message=_('New preferences saved'))
+            request.user.message_set.create(message=_('New preferences saved'), level=messages_extends.SUCCESS_PERSISTENT)
 
     else:
         preferences = user.prop.preferences
