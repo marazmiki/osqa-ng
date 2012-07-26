@@ -13,7 +13,7 @@ label = _("Application logo"),
 help_text = _("Your site main logo."),
 widget=ImageFormWidget))
 
-APP_FAVICON = Setting('APP_FAVICON', '/m/default/media/images/favicon.ico', BASIC_SET, dict(
+APP_FAVICON = Setting('APP_FAVICON', '/static/images/favicon.ico', BASIC_SET, dict(
 label = _("Favicon"),
 help_text = _("Your site favicon."),
 widget=ImageFormWidget))

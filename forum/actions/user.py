@@ -169,7 +169,6 @@ class AwardAction(ActionProxy):
 
         self.user.save()
 
-        warnings.warn('repute message not implemented')
         self.user.message_set.create(message=_(
                 """Congratulations, you have received a badge '%(badge_name)s'. <a href="%(badge_url)s">Find out who has it, too</a>."""
         ) % dict(
@@ -219,7 +218,7 @@ class SuspendAction(ActionProxy):
             u.is_active = True
             u._pop_suspension_cache()
             u.save()
-            u.message_set.create(message=_("Your suspension has been removed."))
+            u.message_set.create(message=_("Your suspension has been removed."), level=messages_extends.SUCCESS_PERSISTENT)
 
     def describe(self, viewer=None):
         if self.extra.get('bantype', 'indefinitely') == 'forxdays' and self.extra.get('forxdays', None):

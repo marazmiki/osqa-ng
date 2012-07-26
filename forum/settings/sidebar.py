@@ -67,7 +67,7 @@ under $10/month their reliable servers get the job done. See our \
 [**step-by-step setup guide**](http://wiki.osqa.net/display/docs/Installing+OSQA+on+WebFaction).
 
 [1]: http://www.webfaction.com?affiliate=osqa
-[2]: /m/default/media/images/webfaction.png""", SIDEBAR_SET, dict(
+[2]: /static/images/webfaction.png""", SIDEBAR_SET, dict(
 label = "Upper Block Content",
 help_text = " The upper sidebar block. ",
 widget=Textarea(attrs={'rows': '10'})))
